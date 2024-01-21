@@ -1,0 +1,51 @@
+import React, { useState } from 'react';
+import Button from '../Button/Button';
+import { FaEnvelope, FaPhone } from 'react-icons/fa';
+import styles from './Main.module.css';
+
+const Main = () => {
+  const [lname, setName] = useState('');
+  const [eMail, setEmail] = useState('');
+  const [para, setPara] = useState('');
+
+  const handleChange = (e) => {
+    if (e.target.name === 'lname') {
+      setName(e.target.value);
+    } else if (e.target.name === 'eMail') {
+      setEmail(e.target.value);
+    } else if (e.target.name === 'para') {
+      setPara(e.target.value);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  return (
+    <div className={styles.parts}>
+
+      <div className={styles.main1}>
+        <div className={styles.l1}>
+          <Button isVal={false} name="setting" icon={<FaEnvelope size={32} />} />
+          <Button isVal={false} name="Calling" icon={<FaPhone size={32} />} />
+        </div>
+        <div className={styles.l2}>
+          <Button isVal={true} name="Email" icon={<FaEnvelope size={32} />} />
+        </div>
+        <form className={styles.inps}>
+          <input className={styles.l} type="text" name="lname" value={lname} onChange={handleChange} />
+          <input className={styles.l} type="email" name="eMail" value={eMail} onChange={handleChange} />
+          <input className={styles.l} type="text" name="para" value={para} onChange={handleChange} />
+          <button className={styles.ln} onSubmit={handleSubmit}>SUBMIT</button>
+        </form>
+        <p>{lname}  {eMail}    {para}</p>
+      </div>
+       <div>
+        <img src="/24.png" alt="" srcset="" className={styles.l_img}/>
+       </div>
+    </div>
+  );
+};
+
+export default Main;
