@@ -1,0 +1,48 @@
+import React from 'react';
+import styles from './Button.module.css';
+
+const Button = (props) => {
+  return (
+    <div className={styles.boc}> 
+      <button className={props.isVal?styles.outline_btn:styles.primary_btn}>
+        {props.icon} {props.name}
+      </button>
+    </div>
+  );
+}
+
+export default Button;
+//---------------------------------------------->
+/* Button.module.css */
+
+.boc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start (left) of the container */
+  }
+  
+  .primary_btn,
+  .outline_btn {
+    width: 200px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
+    margin-bottom: 10px; /* Add margin-bottom for spacing between buttons */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 50px;
+  }
+  
+  .primary_btn {
+    background-color: #0e1113;
+    color: #fff;
+   
+  }
+  
+  .outline_btn {
+    width: 450px; /* Adjust width as needed */
+    border: 2px solid #0e1113; /* Add border for outline effect */
+    background-color: transparent;
+    color: #0e1113;
+    /* margin-left:33%; */
+  }
+  
