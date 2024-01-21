@@ -1,0 +1,28 @@
+import React from "react";
+import styles from './Details.module.css'
+const Details = () => {
+  return (
+    <div>
+      <div className={styles.Details}>
+        <h1 className={styles.Detail_h}>CONTACT US</h1>
+        <p>
+          From a user experience perspective, a well-designed Contact section
+          enhances the overall navigability of a website or application. It
+          provides users with a clear pathway to initiate communication,
+          promoting a sense of trust and reliability.
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default Details;
+//==================================>
+.Details{
+    margin: 0 auto;
+    width: 60%;
+}
+.Detail_h{
+    font-size:2.2rem;
+    font-weight: 800;
+}
